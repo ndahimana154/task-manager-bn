@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Types } from 'mongoose';
 
 const taskSchema = new mongoose.Schema({
     title: {
@@ -8,6 +8,11 @@ const taskSchema = new mongoose.Schema({
     description: {
         type: String,
         required: false
+    },
+    user: {
+        type: String,
+        required: true,
+        ref: 'User'
     },
     status: {
         type: String,
